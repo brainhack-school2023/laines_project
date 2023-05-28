@@ -11,17 +11,19 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 </a>
 </a>
 
-## CanProCo Dataset Description
+## CanProCo MS Dataset Description (N=394)
+
+
 | **Center**    | **Sementation** | **PSIR** | **STIR** | **T2w** | **Total** |
 |:-------------:|:---------------:|:--------:|:--------:|:-------:|:---------:|
-| **Calgary**   | lesion-manual   |          | 93       |         | 93        |
-|               | seg-manual (SC) |          |          | 92      |           |
-| **Edmonton**  | lesion-manual   | 70       |          |         | 70        |
-|               | seg-manual (SC) |          |          | 70      |           |
-| **Montreal**  | lesion-manual   | 104      |          |         | 105       |
-|               | seg-manual (SC) |          |          | 105     |           |
-| **Toronto**   | lesion-manual   | 90       |          |         | 90        |
-|               | seg-manual (SC) |          |          | 90      |           |
-| **Vancouver** | lesion-manual   | 88       |          |         | 88        |
-|               | seg-manual (SC) |          |          | 88      |           |
-| **Total**     |                 | 352      | 93       | 445     |           |
+| **Calgary**   | lesion-manual   |          | 82       |         | 82        |
+|               | seg-manual (SC) |          |          | 82      |           |
+| **Edmonton**  | lesion-manual   | 59       |          |         | 59        |
+|               | seg-manual (SC) |          |          | 59      |           |
+| **Montreal**  | lesion-manual   | 94      |          |         | 94      |
+|               | seg-manual (SC) |          |          | 94     |           |
+| **Toronto**   | lesion-manual   | 80       |          |         | 80        |
+|               | seg-manual (SC) |          |          | 80      |           |
+| **Vancouver** | lesion-manual   | 78       |          |         | 78        |
+|               | seg-manual (SC) |          |          | 78      |           |
+| **Total**     |                 | 311      | 82       | 393     | 395       |
