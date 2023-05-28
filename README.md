@@ -11,7 +11,7 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 </a>
 </a>
 
-## CanProCo MS Dataset Description (N=394)
+## CanProCo MS Dataset Description (N=393)
 
 
 | **Center**    | **Sementation** | **PSIR** | **STIR** | **T2w** | **Total** |
@@ -26,4 +26,4 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 |               | seg-manual (SC) |          |          | 80      |           |
 | **Vancouver** | lesion-manual   | 78       |          |         | 78        |
 |               | seg-manual (SC) |          |          | 78      |           |
-| **Total**     |                 | 311      | 82       | 393     | 395       |
+| **Total**     |                 | 311      | 82       | 393     | 393       |
