@@ -29,4 +29,4 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 | **Total**     |                 | 311      | 82       | 393     | 393       |
 
 
-[vizualise](https://github.com/brainhack-school2023/laines_project/blob/main/viewer_sc_gt.html](https://brainhack-school2023.github.io/laines_project/viewer_sc_gt.html)
+[vizualise](https://brainhack-school2023.github.io/laines_project/viewer_sc_gt.html)
