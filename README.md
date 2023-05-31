@@ -27,3 +27,6 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 | **Vancouver** | lesion-manual   | 78       |          |         | 78        |
 |               | seg-manual (SC) |          |          | 78      |           |
 | **Total**     |                 | 311      | 82       | 393     | 393       |
+
+
+[vizualise](https://github.com/brainhack-school2023/laines_project/blob/main/viewer_sc_gt.html)
