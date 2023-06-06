@@ -1,9 +1,11 @@
-# laines_project
-Repository of Nilser LAINES for 2023 Brainhack-school
+<img src=https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif>
 
-HI! I'm a PhD student at [Aix Marseille Université](https://crmbm.univ-amu.fr/) and [Polytechnique de Montréal](http://neuro.polymtl.ca/). 
-My background is in Biomedical Signal and Image Processing and Neurosciences. For the brainhack school, I would like to analyze the MRI data of multiple sclerosis (MS) [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7), focusing on developing a segmentation models of MS lesions in the spinal cord by deep learning approaches. 
+# Automatic MS lesions segmentation in the spinal cord with CanProCo dataset
 
+## About me
+Hi! I'm a PhD student at [Aix Marseille Université](https://crmbm.univ-amu.fr/) and [Polytechnique de Montréal](http://neuro.polymtl.ca/). 
+My background is in Biomedical Signal and Image Processing and Neurosciences. For the brainhack school, I would like to interact with the MRI data of multiple sclerosis (MS) [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7), being one of the most extensive databases of MS lesions in the brain and spinal cord. 
+Focusing on the application of state-of-the-art deep learning approaches for biomedical image segmentation and then performing a replicability test on 3T and 7T MP2RAGE images from the [CRMBM Lab](https://crmbm.univ-amu.fr/).
 
 <a href="https://github.com/Nilser3">
    <br /><img src="https://avatars.githubusercontent.com/u/77469192?v=4?s=100" width="100px;" alt=""/>
@@ -11,7 +13,13 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 </a>
 </a>
 
-## CanProCo MS Dataset Description (N=393)
+## Project Summary
+### Introduction
+My project aims to develop a multiple sclerosis (MS) lesion in the spinal cord (SC) segmentation algorithm in a multicentric database (CanProCo).
+Through novel deep learning architectures performing for medical imaging such as [nnUNET](https://github.com/MIC-DKFZ/nnUNet). 
+The model will be evaluated on external data, and on other contrasts such as MP2RAGE and other magnetic fields such as 7T.
+
+### CanProCo MS Dataset Description (N=393)
 
 
 | **Center**    | **Sementation** | **PSIR** | **STIR** | **T2w** | **Total** |
@@ -29,6 +37,6 @@ My background is in Biomedical Signal and Image Processing and Neurosciences. Fo
 | **Total**     |                 | 311      | 82       | 393     | 393       |
 
 
- <br /><img src=https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif>
 
-[MS lesion GT](https://brainhack-school2023.github.io/laines_project/viewer_sc_gt.html)
+
+[MS lesion GT](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T.html)
