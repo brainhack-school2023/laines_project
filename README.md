@@ -19,22 +19,45 @@ My project aims to develop a multiple sclerosis (MS) lesion in the spinal cord (
 Through novel deep learning architectures performing for medical imaging such as [nnUNET](https://github.com/MIC-DKFZ/nnUNet). 
 The model will be evaluated on external data, and on other contrasts such as MP2RAGE and other magnetic fields such as 7T.
 
-### CanProCo MS Dataset Description (N=393)
+### Main Objectives 
+1. Interact with [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7) data
+2. Provide a preprocessing pipeline for training/testing [nnU-net](https://github.com/MIC-DKFZ/nnUNet) in the spinal cord.
+3. Train segmentation models of MS lesions in the spinal cord.
+4. Replicability test on MP2RAGE contrast (CRMBM, Marseille data).
+5. To propose improvement paths for the automatic segmentation of MS lesions
 
+### Tools & Methods
+- Pre processing: [Spinal Cord Toolbox](https://spinalcordtoolbox.com/), [ivadomed](https://ivadomed.org/index.html)
+- Deep Learning: 2D [nnU-net](https://github.com/MIC-DKFZ/nnUNet)
+- Data analyse: [Matplotlib](https://matplotlib.org/stable/index.html), [seaborn](https://matplotlib.org/stable/index.html)
 
-| **Center**    | **Sementation** | **PSIR** | **STIR** | **T2w** | **Total** |
+### Data
+Canadian Prospective Cohort study to understand progression in MS: [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7)
+The dataset consists of 3T MRI data from 52 healthy controls (HC) and 393 sobjects with multiple sclerosis (MS).
+
+##### CanProCo MS Dataset Description (N=393)
+
+| **Center**    | **Manual Segmentation** | **PSIR** | **STIR** | **T2w** | **Total** |
 |:-------------:|:---------------:|:--------:|:--------:|:-------:|:---------:|
-| **Calgary**   | lesion-manual   |          | 82       |         | 82        |
-|               | seg-manual (SC) |          |          | 82      |           |
-| **Edmonton**  | lesion-manual   | 59       |          |         | 59        |
-|               | seg-manual (SC) |          |          | 59      |           |
-| **Montreal**  | lesion-manual   | 94      |          |         | 94      |
-|               | seg-manual (SC) |          |          | 94     |           |
-| **Toronto**   | lesion-manual   | 80       |          |         | 80        |
-|               | seg-manual (SC) |          |          | 80      |           |
-| **Vancouver** | lesion-manual   | 78       |          |         | 78        |
-|               | seg-manual (SC) |          |          | 78      |           |
+| **Calgary**   | Lesion segmentation  |          | 82       |         | 82        |
+|               | SC segmentation |          |          | 82      |           |
+| **Edmonton**  | Lesion segmentation   | 59       |          |         | 59        |
+|               | SC segmentation |          |          | 59      |           |
+| **Montreal**  | Lesion segmentation   | 94      |          |         | 94      |
+|               | SC segmentation |          |          | 94     |           |
+| **Toronto**   | Lesion segmentation   | 80       |          |         | 80        |
+|               | SC segmentation |          |          | 80      |           |
+| **Vancouver** | Lesion segmentation   | 78       |          |         | 78        |
+|               | SC segmentation |          |          | 78      |           |
 | **Total**     |                 | 311      | 82       | 393     | 393       |
+
+
+### Experiment #1: Splitting  of the data for training with cross-validation (CV)
+![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2)
+
+### Pre-processing Pipeline for training and testing
+![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/83fd0678-3d1d-488d-b052-f6c8ba9bb49b)
+
 
 
 
