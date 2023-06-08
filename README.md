@@ -15,7 +15,7 @@ Focusing on the application of state-of-the-art deep learning approaches for bio
 </a>
 
 ## Project Summary
-### Introduction
+## Introduction
 Multiple Sclerosis (MS) is a disabling disease of the brain and spinal cord (SC) characterized by presence of lesions.
 Studies demonstrated the added value of 3T MP2RAGE sequence and the advantages of 7T imaging.
 Manual lesion identification is a slow process subject to inter-rater variability and the automatic MS lesion segmentation in the SC has some initiatives.
@@ -24,19 +24,19 @@ My project aims to develop a multiple sclerosis (MS) lesion in the spinal cord (
 Through novel deep learning architectures performing for medical imaging such as [nnUNET](https://github.com/MIC-DKFZ/nnUNet). 
 The model will be evaluated on external data, and on other contrasts such as MP2RAGE and other magnetic fields such as 7T.
 
-### Main Objectives 
+## Main Objectives 
 1. Interact with [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7) data
 2. Provide a preprocessing pipeline for training/testing [nnU-net](https://github.com/MIC-DKFZ/nnUNet) in the spinal cord.
 3. Train segmentation models of MS lesions in the spinal cord.
 4. Replicability test on MP2RAGE contrast (CRMBM, Marseille data).
 5. To propose improvement paths for the automatic segmentation of MS lesions
 
-### Tools & Methods
+## Tools & Methods
 - Pre processing: [Spinal Cord Toolbox](https://spinalcordtoolbox.com/), [ivadomed](https://ivadomed.org/index.html)
 - Deep Learning: 2D [nnU-net](https://github.com/MIC-DKFZ/nnUNet)
 - Data analyse: [Matplotlib](https://matplotlib.org/stable/index.html), [seaborn](https://matplotlib.org/stable/index.html)
 
-### Data
+## Data
 Canadian Prospective Cohort study to understand progression in MS: [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7)
 
 CanProCo Data: The dataset consists of 3T MRI data from 52 healthy controls (HC) and 393 subjects with multiple sclerosis (MS).
@@ -62,13 +62,13 @@ CRMBM Data: The dataset consists of 40 subjects with multiple sclerosis (MS) acq
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T.html) to see an interactive image of a manual lesion segmentation in an STIR image.
 
 
-### Methods #1: Splitting  of the data for training with cross-validation (CV)
+## Methods #1: Splitting  of the data for training with cross-validation (CV)
 In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied.
    <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="500px;" alt=""/>
 </a>
 </a> 
 
-### Methods #2: Pre-processing Pipeline for training and testing
+## Methods #2: Pre-processing Pipeline for training and testing
 The following preprocessing pipeline was applied to our entire CanProCo database and to the MP2RAGE database.
 It is necessary to apply the same preprocessing pipeline to test the model on other data.
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/54564cf5-de83-4030-ba5b-65f005a02902)
@@ -117,19 +117,19 @@ python convert_bids_to_nnUnetv2.py --path-data bids_mp2rage/  --path-out nnUNet_
 nnUNetv2_predict -d Dataset520_ms_lesion_PSIR_STIR -i nnUNet_raw/Dataset522_ms_lesion_T1q_UNI/imagesTs -o  brainhack/test_T1q_UNI_proba -f  0 1 2 3 4 -tr nnUNetTrainer -c 2d -p nnUNetPlans 
 `
 
-### Results of training
+## Results #1: Curves of training
 Five models (each fold) were trained on different GPU cards for approximately 45 hours (1000 epochs).
 and the following training curves were obtained, where a convergence of the pseudo Dice around 0.5 is observed, however we have a model that has started to suffer an overfitting (fold 2) where as the pseudo Dice falls, the loss validation increases. 
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/4f13505a-aa66-46b7-b52e-8260d1bc54a6)
 
 
-### Results: Test of model in CanProCo dataset
+## Results #2: Test of model in CanProCo dataset
 In the following distribution of Dice values we observe an irregular distribution, none of them exceeds 0.8 and we have masks incompatible with the GT, obtaining 0, likewise, there are empty manual masks in the input images, as well as in the inferences. 
 The boxplots show that the STIR images have a higher resolution than the PSIR images.
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/bb73788b-fb92-4532-b598-27da9b2858af)
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_PSIR.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an PSIR image.
 
-### Results: Test of model in MP2RAGE dataset
+## Results #3: Test of model in MP2RAGE dataset
 In the following distribution of Dice values we observe an irregular distribution, none of them exceeds 0.78. 
 None of the UNI images could be segmented, however the T1q images were segmented, only with 8 empty masks. 
 
