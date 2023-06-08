@@ -1,6 +1,5 @@
 
-<img src="https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif" width="900" height="300"/>
-
+<img src="https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif" width="700" height="300"/>
 
 # Automatic MS lesions segmentation in the spinal cord with CanProCo dataset
 
@@ -63,7 +62,7 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T
 
 ### Methods #1: Splitting  of the data for training with cross-validation (CV)
 In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied thanks to the nnUnet network.
-   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="500px;" alt=""/>
+   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="400px;" alt=""/>
 </a>
 </a> 
 
@@ -94,8 +93,9 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE.ht
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE_7T.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an 7T MP2RAGE image.
 
 ### Examples of automatic segmentation 
-
-![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/bb74b15e-74be-4dc7-91f8-a025cfc3f3fb)
+   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/bb74b15e-74be-4dc7-91f8-a025cfc3f3fb" width="700px;" alt=""/>
+</a>
+</a> 
 
 ## Deliverables
 - Preprocessing pipeline for training/testing nnU-net in MS lesions 
@@ -113,10 +113,12 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE_7T
 
 ## Perspectives
 1.    Train a 3D nnUnet models 
-2.    Ensemble multiple predictions approaches   (e.g. Seg MS MP2RAGE model from Basel) 
-3.    Data augmentation methods (GAN; Diffusion models)
-4.    Transfer learning of our model to other trainings 
-
+2.    Data augmentation methods (GAN; Diffusion models)
+3.    Transfer learning of our model to other trainings 
+4.    Ensemble multiple predictions approaches   (e.g. [Seg MS MP2RAGE model from Basel](https://github.com/ivadomed/model_seg_ms_mp2rage)) 
+   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/5e31c28a-a481-4122-aca3-c28531dd2d6f" width="500px;" alt=""/>
+</a>
+</a> 
 
 ## References 
 
