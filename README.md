@@ -62,7 +62,7 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T
 
 ### Methods #1: Splitting  of the data for training with cross-validation (CV)
 In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied thanks to the nnUnet network.
-   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="400px;" alt=""/>
+   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="500px;" alt=""/>
 </a>
 </a> 
 
@@ -76,9 +76,50 @@ The nnUnet needs for its training and testing a particular data structure that w
 In this [Ivadomed repository](https://github.com/ivadomed/data-conversion/tree/jv/update_nnunet_conversion_script_to_v2) a script has been developed to convert data from the [BIDS](https://bids.neuroimaging.io/) formalism to the nnUnet formalism. 
 This step is crucial for both training and testing steps. 
 
-### Results of training
+## Commands to use 
 
+### Convert from BIDS to nnUnet:
+`
+python convert_bids_to_nnUnetv2.py --path-data BIDS_RPI_STIR_SPIR/  --path-out nnUNet_raw --dataset-name ms_lesion_PSIR_STIR  --label-suffix lesion-manual --dataset-number 520 --contrasts PSIR STIR --seed 99 --split 0.8 0.2  --labels-path-name BIDS_RPI_STIR_SPIR/derivatives/labels/  --session-name ses-M0
+`
+### Launch preprocessing for training:
+`
+nnUNetv2_plan_and_preprocess -d 520 --verify_dataset_integrity
+`
+### Launch parallel training :
+`CUDA_VISIBLE_DEVICES=6 nnUNetv2_train 520 2d 0 --npz`
+
+`CUDA_VISIBLE_DEVICES=7 nnUNetv2_train 520 2d 1 --npz`
+
+`CUDA_VISIBLE_DEVICES=3 nnUNetv2_train 520 2d 2 --npz`
+
+`CUDA_VISIBLE_DEVICES=4 nnUNetv2_train 520 2d 3 --npz`
+
+`CUDA_VISIBLE_DEVICES=5 nnUNetv2_train 520 2d 4 --npz`
+
+### Find the best configuration for testing :
+`
+nnUNetv2_find_best_configuration 520 -c 2d
+`
+#### Output (to test):
+`
+nnUNetv2_apply_postprocessing -i brainhack/ensembling_STIR_PSIR -o brainhack/ensembling_STIR_PSIR_proba -pp_pkl_file nnUNet_results/Dataset520_ms_lesion_PSIR_STIR/nnUNetTrainer__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/postprocessing.pkl -np 8 -plans_json nnUNet_results/Dataset520_ms_lesion_PSIR_STIR/nnUNetTrainer__nnUNetPlans__2d/crossval_results_folds_0_1_2_3_4/plans.json
+`
+### Now let's move to our external database (CRMBM, Marseille):
+### Convert from BIDS to nnUnet:
+`
+python convert_bids_to_nnUnetv2.py --path-data bids_mp2rage/  --path-out nnUNet_raw --dataset-name ms_lesion_T1q_UNI  --label-suffix lesion-manual --dataset-number 524 --contrasts T1q UNI --seed 99 --split 0.5 0.5  --labels-path-name bids_mp2rage/derivatives/labels/  --session-name ses-M0
+`
+### To test in external DB
+`
+nnUNetv2_predict -d Dataset520_ms_lesion_PSIR_STIR -i nnUNet_raw/Dataset522_ms_lesion_T1q_UNI/imagesTs -o  brainhack/test_T1q_UNI_proba -f  0 1 2 3 4 -tr nnUNetTrainer -c 2d -p nnUNetPlans 
+`
+
+### Results of training
+Five models (each fold) were trained on different GPU cards for approximately 45 hours (1000 epochs).
+and the following training curves were obtained, where a convergence of the pseudo Dice around 0.5 is observed, however we have a model that has started to suffer an overfitting (fold 2) where as the pseudo Dice falls, the loss validation increases. 
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/4f13505a-aa66-46b7-b52e-8260d1bc54a6)
+
 
 ### Results: Test of model in CanProCo dataset
 
