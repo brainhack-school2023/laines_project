@@ -39,7 +39,8 @@ The model will be evaluated on external data, and on other contrasts such as MP2
 ### Data
 Canadian Prospective Cohort study to understand progression in MS: [CanProCo](https://bmcneurol.biomedcentral.com/articles/10.1186/s12883-021-02447-7)
 
-The dataset consists of 3T MRI data from 52 healthy controls (HC) and 393 sobjects with multiple sclerosis (MS).
+CanProCo Data: The dataset consists of 3T MRI data from 52 healthy controls (HC) and 393 subjects with multiple sclerosis (MS).
+CRMBM Data: The dataset consists of 40 subjects with multiple sclerosis (MS) acquired at 3T MP2RAGE.
 
 ##### CanProCo MS Dataset Description (N=393)
 
