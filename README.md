@@ -169,7 +169,7 @@ Here is an example of the automatic lesion segmentations (green) from our model 
 ## Acknowledgements
 I would like to thank the organizers of the Brainhack School 2023 where I consolidated and formalized a lot of knowledge and tools that will be useful for my doctoral project.  
 
-Thanks also to the [Neuropoly team](http://neuro.polymtl.ca/) of raters for their hard work in the manual segmentation of MS lesions in the SC.
+Thanks also to [NeuroPoly Team](http://neuro.polymtl.ca/) and [CRMBM Team](https://crmbm.univ-amu.fr/) for their hard work in the acquisition, processing and manual segmentation of MS patients.
 
 Special thanks to TA [Jan](https://github.com/valosekj) and [Andjela](https://github.com/Andjelaaaa) for their guidance and support.
 
