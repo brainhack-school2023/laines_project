@@ -69,7 +69,7 @@ In order to reduce the overfitting and build a more robust model, an automatic c
 ### Methods #2: Pre-processing Pipeline for training and testing
 The following preprocessing pipeline was applied to our entire CanProCo database and to the MP2RAGE database.
 It is necessary to apply the same preprocessing pipeline to test the model on other data.
-![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/3598ac7d-6bcb-46c6-bbba-2baa93d38f2c)
+![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/54564cf5-de83-4030-ba5b-65f005a02902)
 
 ## Methods #3: Conversion from BIDS formalism to nnUnet formalism
 The nnUnet needs for its training and testing a particular data structure that we will call "nnUnet formalism", 
@@ -122,11 +122,14 @@ and the following training curves were obtained, where a convergence of the pseu
 
 
 ### Results: Test of model in CanProCo dataset
-
+In the following distribution of Dice values we observe an irregular distribution, none of them exceeds 0.8 and we have masks incompatible with the GT, obtaining 0, likewise, there are empty manual masks in the input images, as well as in the inferences. 
+The boxplots show that the STIR images have a higher resolution than the PSIR images.
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/bb73788b-fb92-4532-b598-27da9b2858af)
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_PSIR.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an PSIR image.
 
 ### Results: Test of model in MP2RAGE dataset
+In the following distribution of Dice values we observe an irregular distribution, none of them exceeds 0.78. 
+None of the UNI images could be segmented, however the T1q images were segmented, only with 8 empty masks. 
 
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/ce0ac0e1-824a-4cb0-8357-71b1a06571a5)
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an 3T MP2RAGE image.
@@ -134,6 +137,7 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE.ht
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE_7T.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an 7T MP2RAGE image.
 
 ### Examples of automatic segmentation 
+Here is an example of the automatic lesion segmentations (green) from our model on images in the CanProCo database (test split) and in the external database (CRMBM, Marseille).
    <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/bb74b15e-74be-4dc7-91f8-a025cfc3f3fb" width="700px;" alt=""/>
 </a>
 </a> 
