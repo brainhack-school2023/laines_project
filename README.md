@@ -17,7 +17,7 @@ Focusing on the application of state-of-the-art deep learning approaches for bio
 ## Project Summary
 ### Introduction
 Multiple Sclerosis (MS) is a disabling disease of the brain and spinal cord (SC) characterized by presence of lesions.
-Studies demonstrated the added value of 3T MP2RAGE sequence [5] and the advantages of 7T imaging.
+Studies demonstrated the added value of 3T MP2RAGE sequence and the advantages of 7T imaging.
 Manual lesion identification is a slow process subject to inter-rater variability 9 10 and the automatic MS lesion segmentation in the SC has some initiatives.
 
 My project aims to develop a multiple sclerosis (MS) lesion in the spinal cord (SC) segmentation algorithm in a multicentric database (CanProCo).
