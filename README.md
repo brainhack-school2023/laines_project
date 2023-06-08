@@ -63,7 +63,7 @@ Click [here](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T
 
 
 ### Methods #1: Splitting  of the data for training with cross-validation (CV)
-In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied thanks to the nnUnet network.
+In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied.
    <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="500px;" alt=""/>
 </a>
 </a> 
