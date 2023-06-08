@@ -147,7 +147,6 @@ Here is an example of the automatic lesion segmentations (green) from our model 
 ## Deliverables
 - Preprocessing pipeline for training/testing nnU-net in MS lesions 
 - Preliminary results of the MS lesion segmentation in the SC using 2D nnUnet.
-- 
 - Jupyter notebooks for data analysis
 
 ## Conclusion
