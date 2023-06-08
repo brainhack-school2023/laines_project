@@ -1,4 +1,6 @@
-<img src=https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif>
+
+<img src="https://github.com/brainhack-school2023/laines_project/blob/main/MS_lesion_seg.gif" width="900" height="300"/>
+
 
 # Automatic MS lesions segmentation in the spinal cord with CanProCo dataset
 
@@ -58,24 +60,72 @@ The dataset consists of 3T MRI data from 52 healthy controls (HC) and 393 sobjec
 
 Click [here](https://brainhack-school2023.github.io/laines_project/sc_STIR_GT_7T.html) to see an interactive image of a manual lesion segmentation in an STIR image.
 
-In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied thanks to the nnUnet network.
-### Methods #1: Splitting  of the data for training with cross-validation (CV)
-![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2)
 
-The following preprocessing pipeline was applied to our entire CanProCo database and to the MP2RAGE database.
-It is necessary to apply the same preprocessing pipeline to test the model on other data.
+### Methods #1: Splitting  of the data for training with cross-validation (CV)
+In order to reduce the overfitting and build a more robust model, an automatic cross validation process was applied thanks to the nnUnet network.
+   <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/fcd0d214-381d-4f5f-9a18-f16e3b49fba2" width="500px;" alt=""/>
+</a>
+</a> 
 
 ### Methods #2: Pre-processing Pipeline for training and testing
-![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/83fd0678-3d1d-488d-b052-f6c8ba9bb49b)
+The following preprocessing pipeline was applied to our entire CanProCo database and to the MP2RAGE database.
+It is necessary to apply the same preprocessing pipeline to test the model on other data.
+![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/3598ac7d-6bcb-46c6-bbba-2baa93d38f2c)
 
-### Methods #3: Conversion from BIDS formalism to nnUnet formalism
+## Methods #3: Conversion from BIDS formalism to nnUnet formalism
+The nnUnet needs for its training and testing a particular data structure that we will call "nnUnet formalism", 
+In this [Ivadomed repository](https://github.com/ivadomed/data-conversion/tree/jv/update_nnunet_conversion_script_to_v2) a script has been developed to convert data from the [BIDS](https://bids.neuroimaging.io/) formalism to the nnUnet formalism. 
+This step is crucial for both training and testing steps. 
 
 ### Results of training
+
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/4f13505a-aa66-46b7-b52e-8260d1bc54a6)
 
 ### Results: Test of model in CanProCo dataset
+
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/bb73788b-fb92-4532-b598-27da9b2858af)
+Click [here](https://brainhack-school2023.github.io/laines_project/sc_PSIR.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an PSIR image.
 
 ### Results: Test of model in MP2RAGE dataset
 
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/ce0ac0e1-824a-4cb0-8357-71b1a06571a5)
+Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an 3T MP2RAGE image.
+
+Click [here](https://brainhack-school2023.github.io/laines_project/sc_MP2RAGE_7T.html) to see an interactive image of a automatic lesion segmentation by nnUnet in an 7T MP2RAGE image.
+
+### Examples of automatic segmentation 
+
+![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/bb74b15e-74be-4dc7-91f8-a025cfc3f3fb)
+
+## Deliverables
+- Preprocessing pipeline for training/testing nnU-net in MS lesions 
+- Model for segmenting lesions in Github repository 
+- Preliminary results of the MS lesion segmentation in the SC using 2D nnUnet.
+- Jupyter notebook for data analysis
+
+## Conclusion
+-   The segmentation of MS lesions in the spinal cord is a challenge:
+                  there is no segmentation model that works "right" in MS lesions
+	               it is linked to inter-rater bias, small volume and irregularity of lesions.
+-   First approach (2D nnUnet) trained on STIR/PSIR and a replicability test on MP2RAGE data. 
+-   Automatic deep learning lesion segmentation models is a work in progress.  
+
+
+## Perspectives
+1.    Train a 3D nnUnet models 
+2.    Ensemble multiple predictions approaches   (e.g. Seg MS MP2RAGE model from Basel) 
+3.    Data augmentation methods (GAN; Diffusion models)
+4.    Transfer learning of our model to other trainings 
+
+
+## References 
+
+1.    A. J. Thompson et al., ‘Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria’, Lancet Neurol., vol. 17, no. 2, pp. 162–173, Feb. 2018, doi: 10.1016/S1474-4422(17)30470-2.
+2.    B. De Leener et al., ‘SCT: Spinal Cord Toolbox, an open-source software for processing spinal cord MRI data’, NeuroImage, vol. 145, pp. 24–43, Jan. 2017, doi: 10.1016/j.neuroimage.2016.10.009.
+3.    C. Gros et al., ‘Automatic segmentation of the spinal cord and intramedullary multiple sclerosis lesions with convolutional neural networks’, NeuroImage, vol. 184, pp. 901–915, Jan. 2019, doi: 10.1016/j.neuroimage.2018.09.081.
+4.    O. Vincent, C. Gros, J. P. Cohen, and J. Cohen-Adad, ‘Automatic segmentation of spinal multiple sclerosis lesions: How to generalize across MRI contrasts?’, ArXiv200304377 Cs Eess, Jun. 2020, Accessed: May 25, 2022. [Online]. Available: http://arxiv.org/abs/2003.04377
+5.    H. Lassmann, ‘Multiple Sclerosis Pathology’, Cold Spring Harb. Perspect. Med., vol. 8, no. 3, Mar. 2018, doi: 10.1101/cshperspect.a028936. 
+6.    O. Ronneberger, P. Fischer, and T. Brox, ‘U-Net: Convolutional Networks for Biomedical Image Segmentation’. arXiv, May 18, 2015. doi: 10.48550/arXiv.1505.04597.
+7.    Ö. Çiçek, A. Abdulkadir, S. S. Lienkamp, T. Brox, and O. Ronneberger, ‘3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation’. arXiv, Jun. 21, 2016. Accessed: Jun. 30, 2022. [Online]. Available: http://arxiv.org/abs/1606.06650
+8.    Oh, J., Arbour, N., Giuliani, F., Guenette, M., Kolind, S., Lynd, L., Marrie, R. A., Metz, L. M., Patten, S. B., Prat, A., Schabas, A., Smyth, P., Tam, R., Traboulsee, A., & Yong, V. W. (2021). The Canadian prospective cohort study to understand progression in multiple sclerosis (CanProCo): Rationale, aims, and study design. BMC Neurology, 21(1), 418. https://doi.org/10.1186/s12883-021-02447-7
+9.    Sastre-Garriga, J., Pareto, D., Alberich, M., Rodríguez-Acevedo, B., Vidal-Jordana, À., Corral, J. F., Tintoré, M., Río, J., Auger, C., Montalban, X., & Rovira, À. (2022). Spinal cord grey matter atrophy in Multiple Sclerosis clinical practice. Neuroscience Informatics, 2(2), 100071. https://doi.org/10.1016/j.neuri.2022.100071
