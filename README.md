@@ -70,7 +70,7 @@ In order to reduce the overfitting and build a more robust model, an automatic c
 
 ## Methods #2: Pre-processing Pipeline for training and testing
 The following preprocessing pipeline was applied to our entire CanProCo database and to the MP2RAGE database.
-It is necessary to apply the same preprocessing pipeline to test the model on other data.
+It is necessary to apply the same preprocessing pipeline to test the model on external datas.
 ![image](https://github.com/brainhack-school2023/laines_project/assets/77469192/54564cf5-de83-4030-ba5b-65f005a02902)
 
 ## Methods #3: Conversion from BIDS formalism to nnUnet formalism
@@ -146,9 +146,9 @@ Here is an example of the automatic lesion segmentations (green) from our model 
 
 ## Deliverables
 - Preprocessing pipeline for training/testing nnU-net in MS lesions 
-- Model for segmenting lesions in Github repository 
 - Preliminary results of the MS lesion segmentation in the SC using 2D nnUnet.
-- Jupyter notebook for data analysis
+- 
+- Jupyter notebooks for data analysis
 
 ## Conclusion
 -   The segmentation of MS lesions in the spinal cord is a challenge:
@@ -166,6 +166,9 @@ Here is an example of the automatic lesion segmentations (green) from our model 
    <br /><img src="https://github.com/brainhack-school2023/laines_project/assets/77469192/5e31c28a-a481-4122-aca3-c28531dd2d6f" width="500px;" alt=""/>
 </a>
 </a> 
+
+## Acknowledgements
+I would like to thank the organizers of the Brainhack School 2023 where I consolidated and formalized a lot of knowledge and tools that will be useful for my doctoral project.  Special thanks to TA [Jan](https://github.com/valosekj) and [Andjela](https://github.com/Andjelaaaa) for their guidance and support.
 
 ## References 
 
